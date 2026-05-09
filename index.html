@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amanah Servis Salatiga - servis HP cepat, rapi, dan mudah konsultasi lewat WhatsApp.">
+  <title>Amanah Servis Salatiga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" data-elevate>
+    <a class="brand" href="#home" aria-label="Amanah Servis">
+      <span class="brand-mark">AS</span>
+      <span>
+        <strong>Amanah Servis</strong>
+        <small>Salatiga</small>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="#layanan">Layanan</a>
+      <a href="#konsultasi">Konsultasi</a>
+      <a href="#lokasi">Lokasi</a>
+    </nav>
+    <a class="header-action" href="#konsultasi">Tanya Biaya</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="BERANDA_2YESS.png" alt="">
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Servis HP cepat & jelas</span>
+          <h1>Amanah Servis bikin tanya kerusakan HP jadi gampang.</h1>
+          <p>Isi masalah HP kamu sebentar. Website ini langsung menyusun chat WhatsApp yang sopan, lengkap, dan mudah dijawab admin.</p>
+          <div class="hero-actions">
+            <a class="primary-btn magnetic" href="#konsultasi">Mulai Konsultasi</a>
+            <a class="secondary-btn" href="#lokasi">Lihat Lokasi</a>
+          </div>
+          <div class="trust-strip" aria-label="Keunggulan layanan">
+            <span>LCD mulai 50K</span>
+            <span>HP mati</span>
+            <span>Baterai kembung</span>
+            <span>Cepat panas</span>
+          </div>
+        </div>
+
+        <div class="hero-showcase reveal delay-1" aria-label="Cuplikan layanan Amanah Servis">
+          <div class="phone-stack">
+            <img class="phone-card phone-main" src="BERANDAYESS.png" alt="Informasi layanan Amanah Servis">
+            <img class="phone-card phone-side" src="LAYANANYESS.png" alt="Daftar layanan servis HP">
+          </div>
+          <div class="live-badge">
+            <span></span>
+            Admin siap bantu
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem-flow" id="layanan">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Biar tidak mikir lama</span>
+        <h2>Pilih kondisi HP yang paling mirip.</h2>
+        <p>Pengunjung cukup klik pilihan. Detailnya nanti otomatis masuk ke chat WhatsApp.</p>
+      </div>
+      <div class="service-grid">
+        <button class="service-card reveal" type="button" data-problem="LCD retak / layar bergaris">
+          <span class="service-icon">LCD</span>
+          <strong>LCD Retak</strong>
+          <small>Layar pecah, bergaris, blank, atau tidak bisa disentuh.</small>
+        </button>
+        <button class="service-card reveal delay-1" type="button" data-problem="HP mati total">
+          <span class="service-icon">OFF</span>
+          <strong>HP Mati Total</strong>
+          <small>Tidak nyala, restart terus, atau hanya getar.</small>
+        </button>
+        <button class="service-card reveal delay-2" type="button" data-problem="Baterai kembung / cepat habis">
+          <span class="service-icon">BAT</span>
+          <strong>Baterai Bermasalah</strong>
+          <small>Kembung, cepat habis, dicas lama, atau persen loncat.</small>
+        </button>
+        <button class="service-card reveal delay-3" type="button" data-problem="HP cepat panas / lemot">
+          <span class="service-icon">HOT</span>
+          <strong>Cepat Panas</strong>
+          <small>HP panas, lemot, sering force close, atau memori penuh.</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="consultation" id="konsultasi">
+      <div class="consult-copy reveal">
+        <span class="eyebrow">Template WhatsApp otomatis</span>
+        <h2>Ceritakan HP kamu, chat akan dirapikan.</h2>
+        <p>Form ini dibuat pendek supaya pengunjung tidak capek. Setelah dikirim, WhatsApp terbuka dengan pesan siap kirim ke admin.</p>
+        <div class="steps">
+          <div><span>1</span>Pilih masalah</div>
+          <div><span>2</span>Isi nama & kontak</div>
+          <div><span>3</span>Kirim ke WhatsApp</div>
+        </div>
+      </div>
+
+      <form class="consult-form reveal delay-1" id="consultForm">
+        <div class="field-row">
+          <label>
+            Nama
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Nama kamu" required>
+          </label>
+          <label>
+            Email
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="email@contoh.com" required>
+          </label>
+        </div>
+
+        <label>
+          Tipe HP
+          <input id="phoneModel" name="phoneModel" type="text" placeholder="Contoh: iPhone 11 / Redmi Note 10 / Samsung A12" required>
+        </label>
+
+        <label>
+          Masalah utama
+          <select id="problem" name="problem" required>
+            <option value="">Pilih masalah HP</option>
+            <option>LCD retak / layar bergaris</option>
+            <option>HP mati total</option>
+            <option>Baterai kembung / cepat habis</option>
+            <option>HP cepat panas / lemot</option>
+            <option>Kamera / speaker / mic bermasalah</option>
+            <option>Lupa pola / software error</option>
+            <option>Lainnya</option>
+          </select>
+        </label>
+
+        <label>
+          Curhat singkat kondisi HP
+          <textarea id="story" name="story" rows="5" placeholder="Contoh: jatuh kemarin, layar masih nyala tapi touchscreen tidak bisa. Saya ingin tanya estimasi biaya dan lama pengerjaan." required></textarea>
+        </label>
+
+        <div class="quick-questions" aria-label="Pertanyaan servis cepat">
+          <span>Kondisi cepat:</span>
+          <label><input type="checkbox" name="quick" value="HP pernah jatuh"> Pernah jatuh</label>
+          <label><input type="checkbox" name="quick" value="HP kena air"> Kena air</label>
+          <label><input type="checkbox" name="quick" value="Data penting di dalam HP"> Data penting</label>
+          <label><input type="checkbox" name="quick" value="Ingin selesai secepatnya"> Butuh cepat</label>
+        </div>
+
+        <div class="message-preview" aria-live="polite">
+          <span>Preview chat</span>
+          <p id="messagePreview">Isi form untuk melihat template chat WhatsApp.</p>
+        </div>
+
+        <button class="submit-btn magnetic" type="submit">Kirim ke WhatsApp Admin</button>
+      </form>
+    </section>
+
+    <section class="locations" id="lokasi">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Datang langsung juga bisa</span>
+        <h2>Pilih outlet terdekat.</h2>
+      </div>
+      <div class="location-grid">
+        <article class="location-panel reveal">
+          <img src="LOKASI AS 1YESS.png" alt="Lokasi Amanah Servis 1">
+          <div>
+            <h3>Amanah Servis 1</h3>
+            <p>Buka maps, cek rute, lalu datang ke outlet terdekat.</p>
+            <a href="https://maps.app.goo.gl/9DHd3roZcFGjzSU88" target="_blank" rel="noopener">Buka Maps 1</a>
+          </div>
+        </article>
+        <article class="location-panel reveal delay-1">
+          <img src="LOKASI AS 2YESS.png" alt="Lokasi Amanah Servis 2">
+          <div>
+            <h3>Amanah Servis 2</h3>
+            <p>Alternatif outlet untuk konsultasi dan servis HP.</p>
+            <a href="https://maps.app.goo.gl/8sEbRbvYJpjtkt7x9" target="_blank" rel="noopener">Buka Maps 2</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-wa" href="#konsultasi" aria-label="Mulai chat WhatsApp">
+    <span>WA</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
