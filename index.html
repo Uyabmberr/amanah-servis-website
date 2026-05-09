@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Amanah Servis Salatiga - servis HP cepat, rapi, dan mudah konsultasi lewat WhatsApp.">
+  <meta name="theme-color" content="#f20f1f">
+  <meta property="og:title" content="Amanah Servis Salatiga">
+  <meta property="og:description" content="Tanya kerusakan HP dan estimasi biaya servis lewat WhatsApp dengan template otomatis.">
+  <meta property="og:image" content="BERANDA_2YESS.png">
+  <meta property="og:type" content="website">
   <title>Amanah Servis Salatiga</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,6 +28,7 @@
     </a>
     <nav class="main-nav" aria-label="Navigasi utama">
       <a href="#layanan">Layanan</a>
+      <a href="#harga">Estimasi</a>
       <a href="#konsultasi">Konsultasi</a>
       <a href="#lokasi">Lokasi</a>
     </nav>
@@ -47,6 +55,11 @@
             <span>Baterai kembung</span>
             <span>Cepat panas</span>
           </div>
+          <div class="hero-stats" aria-label="Ringkasan servis">
+            <div><strong>2</strong><span>Outlet</span></div>
+            <div><strong>4</strong><span>Langkah mudah</span></div>
+            <div><strong>WA</strong><span>Langsung admin</span></div>
+          </div>
         </div>
 
         <div class="hero-showcase reveal delay-1" aria-label="Cuplikan layanan Amanah Servis">
@@ -59,6 +72,26 @@
             Admin siap bantu
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="comfort-band" aria-label="Alur servis yang mudah">
+      <div class="comfort-grid">
+        <article class="comfort-item reveal">
+          <span>01</span>
+          <h3>Pilih masalah</h3>
+          <p>Tidak perlu menjelaskan dari nol. Pilihan cepat membantu admin langsung paham arah kerusakan.</p>
+        </article>
+        <article class="comfort-item reveal delay-1">
+          <span>02</span>
+          <h3>Ceritakan singkat</h3>
+          <p>Tulis kejadian utama saja: jatuh, kena air, mati, panas, atau layar bermasalah.</p>
+        </article>
+        <article class="comfort-item reveal delay-2">
+          <span>03</span>
+          <h3>Chat tersusun</h3>
+          <p>Website merapikan pesan agar admin mudah memberi estimasi dan arahan berikutnya.</p>
+        </article>
       </div>
     </section>
 
@@ -92,6 +125,34 @@
       </div>
     </section>
 
+    <section class="price-section" id="harga">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Estimasi awal</span>
+        <h2>Mulai dari masalah paling sering.</h2>
+        <p>Harga final tetap menunggu pengecekan tipe HP dan kondisi komponen.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price-card reveal">
+          <span>Layar</span>
+          <h3>Ganti LCD</h3>
+          <strong>Mulai 50K</strong>
+          <p>Cocok untuk layar retak, blank, bergaris, ghost touch, atau touchscreen tidak jalan.</p>
+        </article>
+        <article class="price-card featured reveal delay-1">
+          <span>Diagnosa</span>
+          <h3>HP Mati Total</h3>
+          <strong>Cek dulu</strong>
+          <p>Admin akan bantu arahkan apakah perlu cek mesin, baterai, konektor, atau software.</p>
+        </article>
+        <article class="price-card reveal delay-2">
+          <span>Daya</span>
+          <h3>Baterai & Charger</h3>
+          <strong>Tanya tipe</strong>
+          <p>Untuk baterai kembung, cepat habis, tidak masuk cas, atau port charger longgar.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="consultation" id="konsultasi">
       <div class="consult-copy reveal">
         <span class="eyebrow">Template WhatsApp otomatis</span>
@@ -116,6 +177,21 @@
           </label>
         </div>
 
+        <div class="field-row">
+          <label>
+            Nomor WhatsApp kamu
+            <input id="customerWhatsapp" name="customerWhatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="Contoh: 081234567890">
+          </label>
+          <label>
+            Outlet pilihan
+            <select id="outlet" name="outlet">
+              <option>Amanah Servis terdekat</option>
+              <option>Amanah Servis 1</option>
+              <option>Amanah Servis 2</option>
+            </select>
+          </label>
+        </div>
+
         <label>
           Tipe HP
           <input id="phoneModel" name="phoneModel" type="text" placeholder="Contoh: iPhone 11 / Redmi Note 10 / Samsung A12" required>
@@ -132,6 +208,16 @@
             <option>Kamera / speaker / mic bermasalah</option>
             <option>Lupa pola / software error</option>
             <option>Lainnya</option>
+          </select>
+        </label>
+
+        <label>
+          Kapan ingin ditangani?
+          <select id="urgency" name="urgency">
+            <option>Secepatnya</option>
+            <option>Hari ini kalau bisa</option>
+            <option>Besok / jadwal terdekat</option>
+            <option>Mau tanya estimasi dulu</option>
           </select>
         </label>
 
@@ -153,8 +239,33 @@
           <p id="messagePreview">Isi form untuk melihat template chat WhatsApp.</p>
         </div>
 
+        <div class="form-status" aria-live="polite">
+          <span id="formStatus">Pesan siap dirapikan.</span>
+        </div>
+
         <button class="submit-btn magnetic" type="submit">Kirim ke WhatsApp Admin</button>
       </form>
+    </section>
+
+    <section class="proof-section" aria-label="Alasan memilih Amanah Servis">
+      <div class="proof-copy reveal">
+        <span class="eyebrow">Rapi dari awal</span>
+        <h2>Admin dapat info lengkap, pelanggan tidak perlu bingung.</h2>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-card reveal">
+          <strong>Chat langsung jelas</strong>
+          <p>Tipe HP, masalah, kronologi, dan kebutuhan waktu masuk dalam satu pesan.</p>
+        </article>
+        <article class="proof-card reveal delay-1">
+          <strong>Datang lebih siap</strong>
+          <p>Pelanggan bisa memilih outlet dan membuka maps sebelum berangkat.</p>
+        </article>
+        <article class="proof-card reveal delay-2">
+          <strong>Lebih cepat dijawab</strong>
+          <p>Admin tidak perlu tanya ulang hal dasar karena pesan sudah tersusun.</p>
+        </article>
+      </div>
     </section>
 
     <section class="locations" id="lokasi">
@@ -181,11 +292,41 @@
         </article>
       </div>
     </section>
+
+    <section class="faq-section" id="faq">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Pertanyaan cepat</span>
+        <h2>Jawaban yang biasanya dicari dulu.</h2>
+      </div>
+      <div class="faq-list">
+        <details class="reveal">
+          <summary>Apakah bisa tanya biaya dulu?</summary>
+          <p>Bisa. Isi form konsultasi, nanti WhatsApp terbuka dengan pesan yang sudah rapi untuk admin.</p>
+        </details>
+        <details class="reveal delay-1">
+          <summary>Apakah harga LCD selalu 50K?</summary>
+          <p>Harga mulai 50K. Biaya akhir tergantung tipe HP, stok part, dan kondisi kerusakan.</p>
+        </details>
+        <details class="reveal delay-2">
+          <summary>Kalau HP mati total harus dibawa?</summary>
+          <p>Sebaiknya konsultasi dulu lewat WhatsApp. Admin bisa memberi arahan awal sebelum kamu datang.</p>
+        </details>
+        <details class="reveal delay-3">
+          <summary>Outlet mana yang harus dipilih?</summary>
+          <p>Pilih outlet terdekat dari lokasi kamu. Dua link maps sudah tersedia di bagian lokasi.</p>
+        </details>
+      </div>
+    </section>
   </main>
 
   <a class="floating-wa" href="#konsultasi" aria-label="Mulai chat WhatsApp">
     <span>WA</span>
   </a>
+
+  <div class="mobile-cta" aria-label="Aksi cepat">
+    <a href="#konsultasi">Tanya biaya</a>
+    <a href="#lokasi">Buka lokasi</a>
+  </div>
 
   <script src="script.js"></script>
 </body>
