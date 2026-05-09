@@ -14,25 +14,22 @@ function getCheckedQuickNotes() {
 
 function buildMessage() {
   const name = getValue("#name") || "[nama]";
-  const email = getValue("#email") || "[email]";
-  const customerWhatsapp = getValue("#customerWhatsapp") || "Belum diisi";
-  const outlet = getValue("#outlet") || "Amanah Servis terdekat";
+  const customerWhatsapp = getValue("#customerWhatsapp");
   const phoneModel = getValue("#phoneModel") || "[tipe HP]";
   const problem = getValue("#problem") || "[masalah HP]";
-  const urgency = getValue("#urgency") || "Mau tanya estimasi dulu";
+  const urgency = getValue("#urgency") || "Reguler - mengantre sesuai urutan";
   const story = getValue("#story") || "[cerita kondisi HP]";
   const quickNotes = getCheckedQuickNotes();
   const quickText = quickNotes.length ? quickNotes.join(", ") : "Belum dipilih";
+  const contactLine = customerWhatsapp ? `\nNo WhatsApp saya: ${customerWhatsapp}` : "";
 
-  return `Hai Kak, aku tahu dari website. Saya ingin bertanya, HP saya ${phoneModel} mengalami ${problem}. ${story} Dan berapa biayanya? :)\n\nNama: ${name}\nEmail: ${email}\nNo WhatsApp saya: ${customerWhatsapp}\nOutlet pilihan: ${outlet}\nKapan ingin ditangani: ${urgency}\nKondisi tambahan: ${quickText}`;
+  return `Hai Kak, aku tahu dari website. Saya ingin bertanya, HP saya ${phoneModel} mengalami ${problem}. ${story} Dan berapa biayanya? :)\n\nNama: ${name}${contactLine}\nPilihan pengerjaan: ${urgency}\nKondisi tambahan: ${quickText}`;
 }
 
 function collectPayload() {
   return {
     name: getValue("#name"),
-    email: getValue("#email"),
     customerWhatsapp: getValue("#customerWhatsapp"),
-    outlet: getValue("#outlet"),
     phoneModel: getValue("#phoneModel"),
     problem: getValue("#problem"),
     urgency: getValue("#urgency"),

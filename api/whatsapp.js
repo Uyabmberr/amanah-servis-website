@@ -9,18 +9,17 @@ function clean(value, fallback = "") {
 
 function buildMessage(body) {
   const name = clean(body.name, "[nama]");
-  const email = clean(body.email, "[email]");
-  const customerWhatsapp = clean(body.customerWhatsapp, "Belum diisi");
-  const outlet = clean(body.outlet, "Amanah Servis terdekat");
+  const customerWhatsapp = clean(body.customerWhatsapp);
   const phoneModel = clean(body.phoneModel, "[tipe HP]");
   const problem = clean(body.problem, "[masalah HP]");
-  const urgency = clean(body.urgency, "Mau tanya estimasi dulu");
+  const urgency = clean(body.urgency, "Reguler - mengantre sesuai urutan");
   const story = clean(body.story, "[cerita kondisi HP]");
   const quickNotes = Array.isArray(body.quickNotes)
     ? body.quickNotes.map((item) => clean(item)).filter(Boolean).join(", ")
     : "Belum dipilih";
+  const contactLine = customerWhatsapp ? `\nNo WhatsApp saya: ${customerWhatsapp}` : "";
 
-  return `Hai Kak, aku tahu dari website. Saya ingin bertanya, HP saya ${phoneModel} mengalami ${problem}. ${story} Dan berapa biayanya? :)\n\nNama: ${name}\nEmail: ${email}\nNo WhatsApp saya: ${customerWhatsapp}\nOutlet pilihan: ${outlet}\nKapan ingin ditangani: ${urgency}\nKondisi tambahan: ${quickNotes || "Belum dipilih"}`;
+  return `Hai Kak, aku tahu dari website. Saya ingin bertanya, HP saya ${phoneModel} mengalami ${problem}. ${story} Dan berapa biayanya? :)\n\nNama: ${name}${contactLine}\nPilihan pengerjaan: ${urgency}\nKondisi tambahan: ${quickNotes || "Belum dipilih"}`;
 }
 
 module.exports = function handler(req, res) {
@@ -30,7 +29,7 @@ module.exports = function handler(req, res) {
   }
 
   const body = req.body || {};
-  const required = ["name", "email", "phoneModel", "problem", "story"];
+  const required = ["name", "phoneModel", "problem", "story"];
   const missing = required.filter((field) => !clean(body[field]));
 
   if (missing.length) {
