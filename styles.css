@@ -68,16 +68,12 @@ textarea {
   min-width: max-content;
 }
 
-.brand-mark {
-  display: grid;
-  width: 42px;
+.brand-logo {
+  display: block;
+  width: 74px;
   height: 42px;
-  place-items: center;
-  border-radius: 50%;
-  color: white;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  box-shadow: 0 9px 22px rgba(242, 15, 31, .35);
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand strong,
@@ -218,6 +214,13 @@ h1 {
 .hero-copy p {
   max-width: 610px;
   font-size: 18px;
+}
+
+.hero-logo {
+  display: block;
+  width: min(360px, 78vw);
+  height: auto;
+  margin: 0 0 22px;
 }
 
 .hero-actions {
